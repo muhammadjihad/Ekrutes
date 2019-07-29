@@ -1,0 +1,186 @@
+/* Universal */
+a{
+    color:inherit;
+    text-decoration: none;
+}
+body{
+    width:100%;
+    overflow-x: hidden;
+    height:auto;
+}
+
+.bg-dark{
+    -webkit-transition: background .3s ease;
+}
+
+.bg-transparent{
+    -webkit-transition: background .3s ease;
+}
+
+a:hover{
+    color:inherit;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+}
+hr{
+    border-color:white;
+}
+
+nav.navbar{
+    padding:15px 2%;
+    width:100%;
+}
+    nav.navbar li.nav-item{
+        padding:20px;
+    }
+
+.jumbotron{
+    background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7) ),url('http://127.0.0.1:8000/static/img/conversation.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    padding-top:20vh;
+    overflow: hidden;
+    margin-bottom: 0
+}
+    .jumbotron h1{
+        font-size: 8ch;
+    }
+    .jumbotron h2{
+        font-family: 'Roboto',sans-serif;
+    }
+
+div#testimoni{
+
+}
+    div.testi-box{
+        padding-top:35px;
+        padding-bottom: 35px;
+        background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+        position: relative;
+    }
+        div.container.text-box h4{
+            font-size:80px;
+            font-family: 'Roboto',sans-serif;
+        }
+        div.text-box div.body hr{
+            border-color:black;
+        }
+
+section#layanan{
+    background-color:yellow;
+}
+    div.layanan-box{
+        padding:25px;
+        font-family: 'Roboto',sans-serif;
+        position: relative;
+    }
+        div.layanan-box .card{
+            padding:15px;
+            background-color:rgb(107, 106, 106);
+            position: relative;
+            overflow:hidden;
+            box-shadow: 2px 2px 4px black
+        }
+        div.layanan-box .card:hover{
+            box-shadow: 0px 0px white;
+            cursor: pointer;
+        }
+            div.cut-text{
+                height:145px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+            }
+        div.layanan-box img{
+            margin:auto;
+            height:100px;
+            width:100px;
+        }
+
+        div.layanan-box div.body-box{
+            margin-top: 10px;
+        }
+
+div.feature-2{
+
+}
+    div.feature-2 div.container.feature-2-box{
+        padding:15px;
+    }
+
+div.feature-3{
+    background-color:whitesmoke;
+    padding:20px;
+}
+
+div.portfolio{
+
+}
+    div.portfolio h1{
+        font-family: 'Roboto',sans-serif;
+        color:whitesmoke;
+        display: inline-block;
+        padding:15px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 2px 2px lightgrey;
+    }
+
+    div.portfolio div.col-lg-6{
+        vertical-align: middle
+    }
+
+    div.portfolio img{
+        margin:15px;
+        height: 100%;
+        -webkit-filter:grayscale(100%);
+    }
+
+    div.portfolio img:hover{
+        -webkit-filter: grayscale(0);
+        cursor: pointer;
+    }
+
+div.testimoni{
+    padding:15px;
+}
+    div.testimoni h1{
+        font-family: 'Roboto',sans-serif;
+        color:whitesmoke;
+        display: inline-block;
+        padding:15px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 2px 2px lightgrey;
+    }
+    div.testimoni div.testimoni-box{
+        padding:25px;
+    }
+    div.testimoni div.testimoni-box img{
+        height:200px;
+        width:200px;
+    }
+        div.testimoni div.body p{
+            font-style: italic;
+        }
+
+footer.page-footer{
+}
+    footer.page-footer div.row{
+        padding:20px
+    }
+    footer div.footer-title{
+        padding:15px;
+    }
+    footer hr{
+        padding-bottom: 0;
+        margin-bottom: -10px
+    }
+
+/* Animation */
+@keyframes underlineShow{
+    0%{
+        border-bottom: none;
+    }
+    100%{
+        border-bottom: 3px solid white;
+    }
+}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CornerStone Indonesia</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/thinking.png' %}"/>
+    {% include 'snippets/styles.html' %}
+    
+    {% block addStyles %}
+        
+    {% endblock addStyles %}
+        
+</head>
+<body>
+
+    {% include 'snippets/navbar.html' %}
+
+    
+    {% block konten1 %}
+        
+    {% endblock konten1 %}
+        
+    
+
+    {% include 'snippets/scripts.html' %}
+
+    
+    {% block addScripts %}
+        
+    {% endblock addScripts %}
+        
+</body>
+</html>
