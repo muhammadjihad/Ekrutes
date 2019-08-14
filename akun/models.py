@@ -11,25 +11,51 @@ def getUser(session_key):
         return user
     except:
         return None
-class AccountStatus(models.Model):
 
-    user=models.OneToOneField(User, on_delete=models.CASCADE)
-    PILIHAN_KATEGORI=(
-        (1,'Super Admin'),
-        (2,'HR')
-    )
-    kategori=models.CharField(max_length=1,default=2)
 
-    def __str__(self):
-        return self.user.username
+class Kecamatan(models.Model):
+    id_kecamatan = models.SmallIntegerField(primary_key=True)
+    f_id_kota = models.SmallIntegerField()
+    nama_kecamatan = models.CharField(max_length=40)
+
+    class Meta:
+        managed = False
+        db_table = 'kecamatan'
+
+
+class Kota(models.Model):
+    id_kota = models.SmallIntegerField(primary_key=True)
+    f_id_prov = models.IntegerField()
+    nama_kota = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'kota'
 
 class AccountProfile(models.Model):
 
     user=models.OneToOneField(User, on_delete=models.CASCADE)
     namaPerusahaan=models.CharField(max_length=25, blank=True)
+    PILIHAN_KATEGORI=(
+        (1,'Super Admin'),
+        (2,'HR')
+    )
+    kategori=models.CharField(max_length=1,default=2)
     alamatPerusahaan=models.CharField(max_length=50,blank=True)
     noKontak=models.CharField(max_length=15,blank=True)
+    person=models.CharField(max_length=30)
+    tokenTest=models.IntegerField(default=50)
+    PILIHAN_JENIS_AKUN=(
+        (0,'Demo'),
+        (1,'Premium')
+    )
+    tanggalRegistrasi=models.DateField(auto_now_add=True)
+    jenisAkun=models.SmallIntegerField(choices=PILIHAN_JENIS_AKUN,default=0)
     foto=models.ImageField(upload_to='company-profile-picture',default='company-profile-picture/default.png')
+    npwp=models.CharField(max_length=23,blank=True)
+    idKecamatan=models.ForeignKey(Kecamatan,on_delete=models.CASCADE,blank=True,null=True)
+    deskripsi=models.TextField(blank=True)
+    flag=models.BooleanField(default=True)
 
     def __str__(self):
         return self.user.username

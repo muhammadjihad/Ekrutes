@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'akun',
+    'superadmin',
+    'peserta',
+    'hr',
 
     # Third Party Libraries
     'rest_framework',
@@ -81,8 +84,12 @@ WSGI_APPLICATION = 'psikotes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ekrutes',
+        'USER':'root',
+        'PASSWORD':'secondheartbeat',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
@@ -104,6 +111,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE':100
+}
 
 
 # Internationalization
@@ -139,3 +151,7 @@ EMAIL_PORT = 587
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ('content-disposition', 'accept-encoding',
+                      'content-type', 'accept', 'origin', 'authorization','cache-control',
+                      'origin','X-Requested-With','Redirect'
+                      )

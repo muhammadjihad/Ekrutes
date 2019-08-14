@@ -1,0 +1,10 @@
+{% autoescape off %}
+	Hallo {{ user.username }},
+	Klik link di bawah ini untuk melakukan konfirmasi akun anda,
+	http://{{ domain }}{% url 'akun-api:activate' uidb64=uid token=token %}
+
+	Ingat!
+	Tetap jaga kerahasiaan sandi akun kamu, karena kami akan melakukan verifikasi melalui email ini ya!
+
+	Ekrutes Team,
+{% endautoescape %}

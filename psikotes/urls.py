@@ -24,6 +24,8 @@ urlpatterns = [
 
     # API Page
     path('akun-api/',include('akun.api.urls',namespace='akun-api')),
+    path('superadmin-api/',include('superadmin.api.urls',namespace='superadmin-api')),
+    path('peserta-api/',include('peserta.api.urls',namespace='peserta-api')),
 
     path('',views.index)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
